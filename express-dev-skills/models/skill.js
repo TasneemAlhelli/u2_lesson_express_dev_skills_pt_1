@@ -35,11 +35,22 @@ const getOne = (id) => {
 const create = (skill) => {
   skill.id = nextId++
   skills.push(skill)
-  console.log(skills)
+}
+
+const deleteSkill = (id) => {
+  let skillIndex = skills.findIndex((skill) => skill.id === parseInt(id))
+  skills.splice(skillIndex, 1)
+}
+
+const update = (id, newSkill) => {
+  const current = skills.find(skill => skill.id === parseInt(id))
+  current.name = newSkill.name
 }
 
 module.exports = {
   getAll,
   getOne,
-  create
+  create,
+  delete: deleteSkill,
+  update
 }
