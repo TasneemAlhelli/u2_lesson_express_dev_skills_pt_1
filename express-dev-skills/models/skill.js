@@ -43,7 +43,7 @@ const deleteSkill = (id) => {
 }
 
 const update = (id, newSkill) => {
-  const current = skills.find(skill => skill.id === parseInt(id))
+  const current = skills.find((skill) => skill.id === parseInt(id))
   current.name = newSkill.name
 }
 

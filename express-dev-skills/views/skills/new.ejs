@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>New Skill</title>
-</head>
-<body>
-  <form action="/skills" method="POST">
-    <input type="text" name="name">
-    <button type="submit">Add</button>
-  </form>
-  
-</body>
-</html>
+<%- include('./partials/header.ejs') %>
+<h2>Add New Skill</h2>
+<form action="/skills" method="POST">
+  <input type="text" name="name" placeholder="Name">
+  <button class="submitBtn" type="submit">Add</button>
+</form>
+<%- include('./partials/footer.ejs') %>

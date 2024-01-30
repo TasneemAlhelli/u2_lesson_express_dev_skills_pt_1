@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <form action="/skills/<%= skill.id%>?__method=PUT" method="POST">
-    <input name="name" value="<%= skill.name %>">
-    <button type="submit">Update</button>
-  </form>
-  
-</body>
-</html>
+<%- include('./partials/header.ejs') %>
+<h2>Edit Skill</h2>
+<form action="/skills/<%= skill.id%>?__method=PUT" method="POST">
+  <input name="name" value="<%= skill.name %>" placeholder="Name">
+  <button class="submitBtn" type="submit">Update</button>
+</form>
+<%- include('./partials/footer.ejs') %>

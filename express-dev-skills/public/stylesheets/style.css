@@ -1,8 +1,48 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+table th {
+  font-size: 17px;
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+button:hover {
+  background-color: antiquewhite;
+}
+
+.submitBtn {
+  padding: 15px;
+}
+
+#addLink {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
 }

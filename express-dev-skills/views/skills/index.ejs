@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<%- include('./partials/header.ejs') %>
   <h1>List of Skills</h1>
-  <ul>
+  <table>
+    <tr>
+      <th>Skill</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
     <% skills.forEach((skill) => { %>
-      <li>
-        <a href="/skills/<%= skill.id %>"><%= skill.name %></a>
+      <tr>
+        <td>
+          <a href="/skills/<%= skill.id %>"><%= skill.name %></a>
+        </td>
+        <td>
         <a href="/skills/<%= skill.id %>/edit">Edit</a>
+      </td>
+        <td>
         <form action="/skills/<%= skill.id %>?__method=DELETE" method="POST">
           <button type="submit">X</button>
         </form>
-      </li>
+      </td>
+      </tr>
     <%})  %>
-    <a href="/skills/new">Add Skill</a>
-  </ul>
-</body>
-</html>
+  </table>
+  <a id="addLink" href="/skills/new">Add New Skill</a>
+<%- include('./partials/footer.ejs') %>
