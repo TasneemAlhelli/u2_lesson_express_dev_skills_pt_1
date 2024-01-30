@@ -1,22 +1,23 @@
+let nextId = 0
 const skills = [
   {
-    id: 1,
+    id: nextId++,
     name: 'HTML'
   },
   {
-    id: 2,
+    id: nextId++,
     name: 'CSS'
   },
   {
-    id: 3,
+    id: nextId++,
     name: 'JavaScript'
   },
   {
-    id: 4,
+    id: nextId++,
     name: 'Node.js'
   },
   {
-    id: 5,
+    id: nextId++,
     name: 'React.js'
   }
 ]
@@ -31,7 +32,14 @@ const getOne = (id) => {
   })
 }
 
+const create = (skill) => {
+  skill.id = nextId++
+  skills.push(skill)
+  console.log(skills)
+}
+
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  create
 }

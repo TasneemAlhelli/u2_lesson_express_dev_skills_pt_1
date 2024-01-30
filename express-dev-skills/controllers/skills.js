@@ -12,7 +12,18 @@ const show = (req, res) => {
   res.render('skills/show', { skill })
 }
 
+const newSkill = (req, res) => {
+  res.render('skills/new')
+}
+
+const create = (req, res) => {
+  skillModel.create(req.body)
+  res.redirect('/skills')
+}
+
 module.exports = {
   index,
-  show
+  show,
+  new: newSkill,
+  create
 }
