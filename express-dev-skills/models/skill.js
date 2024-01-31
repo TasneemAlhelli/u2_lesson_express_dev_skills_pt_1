@@ -1,4 +1,4 @@
-let nextId = 0
+let nextId = 1
 const skills = [
   {
     id: nextId++,
@@ -35,6 +35,7 @@ const getOne = (id) => {
 const create = (skill) => {
   skill.id = nextId++
   skills.push(skill)
+  return skill
 }
 
 const deleteSkill = (id) => {

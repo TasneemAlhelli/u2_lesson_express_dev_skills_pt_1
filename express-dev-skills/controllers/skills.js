@@ -8,7 +8,6 @@ const index = (req, res) => {
 const show = (req, res) => {
   const id = req.params.id
   const skill = skillModel.getOne(id)
-  console.log(id)
   res.render('skills/show', { skill })
 }
 
@@ -17,7 +16,7 @@ const newSkill = (req, res) => {
 }
 
 const create = (req, res) => {
-  skillModel.create(req.body)
+  let newSkill = skillModel.create(req.body)
   res.redirect('/skills')
 }
 
@@ -30,7 +29,6 @@ const deleteSkill = (req, res) => {
 const edit = (req, res) => {
   let id = req.params.id
   const skill = skillModel.getOne(id)
-  console.log(skill)
   res.render('skills/edit', {
     skill
   })
@@ -39,7 +37,7 @@ const edit = (req, res) => {
 const update = (req, res) => {
   let id = req.params.id
   skillModel.update(id, req.body)
-  res.redirect('/skills')
+  res.redirect(`/skills/${id}`)
 }
 
 module.exports = {
