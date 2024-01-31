@@ -1,4 +1,8 @@
 
 <%- include('./partials/header.ejs') %>
   <h2><%= skill.name %></h2>
+  <a href="/skills/<%= skill.id %>/edit">Edit</a> 
+  <form action="/skills/<%= skill.id %>?__method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+  </form>
 <%- include('./partials/footer.ejs') %>
